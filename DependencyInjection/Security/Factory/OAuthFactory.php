@@ -27,7 +27,7 @@ use Symfony\Component\DependencyInjection\Reference;
  */
 class OAuthFactory implements AuthenticatorFactoryInterface
 {
-    public function createAuthenticator(ContainerBuilder $container, string $firewallName, array $config, string $userProviderId): string
+    public function create(ContainerBuilder $container, string $firewallName, array $config, string $userProviderId): string
     {
         $authenticatorId = 'security.authenticator.oauth2.'.$firewallName;
         $firewallEventDispatcherId = 'security.event_dispatcher.'.$firewallName;
